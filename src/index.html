@@ -1,0 +1,146 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" manifest="site.manifest">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>Invaders From Space! Dave Richer 2015</title>
+    <meta name="description" content="A SpaceInvaders clone, in javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS Design -->
+    <link href="vendor/jquery-ui.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Template for score -->
+    <script type="text/template" id="scoreTemplate">
+        <div class="score">
+            <p><em>Name:</em> [name] <em>Score:</em> [score]</p>
+        </div>
+    </script>
+
+    <!-- Modernize the page for better HTML compatibility -->
+    <script src="vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<nav class="boxShadow">
+    <div id="innerNav">
+        <h3>Simple <span class="thick">Games</span></h3>
+
+        <div class="navItems">
+            <h4>FAQ</h4>
+            <h4>About</h4>
+            <h4>Games</h4>
+        </div>
+    </div>
+</nav>
+
+<div class="content">
+    <div class="titleImage"></div>
+    <div class="gamePane boxShadow">
+        <div class="gamePane">
+            <canvas id="gameCanvas" width="460" height="510">
+                Your browser does not support HTML 5
+            </canvas>
+
+        </div>
+    </div>
+    <div id="tabContainer">
+        <div id="tabs">
+            <ul>
+                <li><a href="#gameTab">GAME</a>
+                </li>
+                <li><a href="#scoresTab">SCORES</a>
+                </li>
+            </ul>
+            <div id="gameTab">
+                <div id="leftGameTab">
+                    <h3>Instructions</h3>
+
+                    <p>Destroy Enemy Invaders before they reach the ground.
+                        <br>Watch out for enemy fire!</p>
+                </div>
+                <div id="rightGameTab">
+                    <h3>Controls</h3>
+                    <ul>
+                        <li>
+                            <span class="letter">A</span>
+                            <span class="desc">Move Left</span>
+                        </li>
+                        <li>
+                            <span class="letter">D</span>
+                            <span class="desc">Move Right</span>
+                        </li>
+                        <li>
+                            <span class="letter">S</span>
+                            <span class="desc">Fire</span>
+                        </li>
+                        <li>
+                            <span class="letter">W</span>
+                            <span class="desc">Start / Replay</span>
+                        </li>
+                        <li>
+                            <span class="letter">X</span>
+                            <span class="desc">New Player</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="scoresTab">
+                <h3>High Scores</h3>
+
+                <div id="scoresHolder"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    &copy;2015 David J Richer inc.
+</div>
+<div id="error"></div>
+
+<script src="vendor/jquery-1.11.2.min.js"></script>
+<script src="vendor/jquery-ui.min.js"></script>
+
+<!-- All the JavaScript in the world..... -->
+
+<!-- Load Sprite Objects -->
+<script src="js/invaders/Sprites/assets.js"></script>
+<script src="js/invaders/Sprites/invader.js"></script>
+<script src="js/invaders/Sprites/player.js"></script>
+<script src="js/invaders/Sprites/missile.js"></script>
+
+<!-- Load the Core Objects -->
+<script src="js/invaders/Core/board.js"></script>
+<script src="js/invaders/Core/screen.js"></script>
+<script src="js/invaders/Core/score.js"></script>
+<!-- Load the Invader Collection -->
+<script src="js/invaders/Sprites/invaders.js"></script>
+
+<!-- Setup the Game -->
+<script src="js/invaders/Core/app.js"></script>
+<script src="js/invaders/Core/data.js"></script>
+
+<!-- Load the site specific javascript and Ready function -->
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

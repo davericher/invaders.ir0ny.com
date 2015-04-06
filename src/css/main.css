@@ -1,0 +1,251 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: #0080b6;
+}
+
+/* Reset the Margins */
+
+.content {
+    background: url('../img/banner.jpg') no-repeat top center, url('../img/repeatSlice.jpg') repeat-x top right, #0080b6;
+    height: 987px;
+}
+
+/* Main Content Div */
+
+nav {
+    background: #0080b6;
+    height: 40px;
+}
+
+/* The Navigation Element */
+
+#innerNav {
+    width: 955px;
+    height: 40px;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+#innerNav h3 {
+    margin: 0;
+    padding: 0 0 0 4px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 1.6em;
+    color: #fff;
+    display: inline-block;
+    float: left;
+    width: 425px;
+}
+
+#innerNav .navItems {
+    padding: 0;
+    margin: 0;
+    height: inherit;
+    color: #fff;
+    display: inline-block;
+    width: 400px;
+    text-align: right;
+}
+
+#innerNav .navItems h4 {
+    display: inline-block;
+    margin: 0 auto;
+    width: 133px;
+    height: inherit;
+    float: right;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 1.5em;
+}
+
+.thick {
+    font-weight: 500;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Footer formatting */
+
+.boxShadow,
+#gameTab,
+#scoresTab {
+    -webkit-box-shadow: -3px 6px 41px 0 rgba(0, 0, 0, 0.83);
+    -moz-box-shadow: -3px 6px 41px 0 rgba(0, 0, 0, 0.83);
+    box-shadow: -3px 6px 41px 0 rgba(0, 0, 0, 0.83);
+}
+
+/* Additional box shadow */
+
+#tabs ul li {
+    margin-right: 20px;
+}
+
+#tabContainer {
+    height: 210px;
+    width: 800px;
+    margin: 60px auto auto;
+}
+
+/* Box Shadow */
+
+#gameCanvas {
+    background: #000;
+    margin: 5px;
+}
+
+/* The Drawing surface for 'Invaders of Space' */
+
+.titleImage {
+    background: url(../img/title.png) no-repeat center;
+    height: 60px;
+    width: 665px;
+    margin: 0 auto;
+    padding-top: 45px;
+}
+
+/* Higher Definition Title Image */
+
+.gamePane {
+    width: 470px;
+    height: 520px;
+    background-color: grey;
+    margin: 0 auto;
+}
+
+/* JavaScript Game Pane */
+
+#scoresTab,
+#gameTab {
+    background-color: #fff;
+}
+
+#scoresTab h3 {
+    padding-bottom: 5px;
+}
+
+#scoresTab p {
+    margin-top: 0;
+    margin-bottom: 7px;
+}
+
+/* Whiteout background on tabs */
+
+#leftGameTab {
+    width: 71%;
+    float: left;
+}
+
+#rightGameTab {
+    width: 25%;
+    float: right;
+}
+
+/* JavaScript UI Tab Pane */
+/**
+ * Text Formatting
+ */
+
+h3 {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    margin-top: 9px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+    font-size: 14px
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+}
+
+li {
+    margin: 2px 0 2px 0;
+}
+
+.letter {
+    font-weight: 900;
+    width: 10px;
+    display: inline-block;
+}
+
+.desc:before {
+    content: '-';
+    padding-right: 10px;
+    padding-left: 5px;
+    display: inline-block;
+}
+
+/**
+ * Jquery UI Overrides
+ */
+
+.ui-tabs .ui-tabs-nav,
+.ui-tabs-nav,
+.ui-tabs {
+    background: none;
+    padding: 0;
+    border: 0;
+}
+
+.ui-tabs-anchor {
+    background-color: #0080b6;
+    width: 100px;
+    text-align: center;
+    border-radius: 6px 6px 1px 0;
+    -moz-border-radius: 6px 6px 1px 0;
+    -webkit-border-radius: 6px 6px 1px 0;
+    color: #fff;
+}
+
+.ui-widget-header {
+    background-color: #0080b6;
+    border-radius: 6px 6px 1px 0;
+    -moz-border-radius: 6px 6px 1px 0;
+    -webkit-border-radius: 6px 6px 1px 0;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    border: 0;
+    background: none;
+}
+
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+    color: darkgray;
+}
+
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+    color: #fff;
+}
+
+.ui-state-hover a,
+.ui-state-hover a:link,
+.ui-state-hover a:visited {
+    color: lemonchiffon;
+}

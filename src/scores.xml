@@ -1,0 +1,14 @@
+<ArrayOfScore>
+    <Score>
+        <name>MDA</name>
+        <score>100003</score>
+    </Score>
+    <Score>
+        <name>ADM</name>
+        <score>100002</score>
+    </Score>
+    <Score>
+        <name>EET</name>
+        <score>100001</score>
+    </Score>
+</ArrayOfScore>
