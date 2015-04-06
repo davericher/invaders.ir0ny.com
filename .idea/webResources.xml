@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/Dist" />
+            <path value="file://$PROJECT_DIR$/Dist/css" />
+            <path value="file://$PROJECT_DIR$/Dist/js" />
+            <path value="file://$PROJECT_DIR$" />
+            <path value="file://$PROJECT_DIR$/Dist/js/Core" />
+            <path value="file://$PROJECT_DIR$/Dist/js/vendor" />
+            <path value="file://$PROJECT_DIR$/Dist/js/Workers" />
+            <path value="file://$PROJECT_DIR$/Dist/js/Sprites" />
+            <path value="file://$PROJECT_DIR$/Dist/js/invaders" />
+            <path value="file://$PROJECT_DIR$/Dist/js/invaders/Core" />
+            <path value="file://$PROJECT_DIR$/Dist/js/invaders/Sprites" />
+            <path value="file://$PROJECT_DIR$/node_modules" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>
