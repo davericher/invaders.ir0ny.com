@@ -1,28 +1,31 @@
 CACHE MANIFEST
-#2015-04-05:v2
+#werd1
 # David Richer - Web Imaging and Animations Final - 2015
 # Dave@Ir0nY.com
 
 CACHE:
+index.html
 css/main.css
-images/sprites.png
 img/banner.jpg
 img/repeatSlice.jpg
+img/sprites.png
 img/title.png
-js/Core/board.js
-js/Core/screen.js
-js/Sprites/invader.js
-js/Sprites/assets.js
-js/Sprites/missile.js
-js/Sprites/player.js
-js/invaders.js
-js/app.js
-js/data.js
-js/vendor/modernizr-2.8.3-respond-1.4.2.min.js
+vendor/jquery-1.11.2.min.js
+vendor/jquery-ui.min.css
+vendor/jquery-ui.min.js
+vendor/modernizr-2.8.3-respond-1.4.2.min.js
 js/main.js
-js/vendor/jquery-ui.min.css
-js/vendor/jquery-ui.min.js
-js/vendor/jquery-1.11.2.min.js
+js/invaders/Core/app.js
+js/invaders/Core/board.js
+js/invaders/Core/data.js
+js/invaders/Core/score.js
+js/invaders/Core/screen.js
+js/invaders/Core/score.js
+js/invaders/Sprites/assets.js
+js/invaders/Sprites/invaders.js
+js/invaders/Sprites/invader.js
+js/invaders/Sprites/missile.js
+js/invaders/Sprites/player.js
 http://fonts.googleapis.com/css?family=Open+Sans:400,800
 http://fonts.googleapis.com/css?family=Roboto:400,100
 http://fonts.gstatic.com/s/opensans/v10/EInbV5DfGHOiMmvb1Xr-hugdm0LZdjqr5-oayXSOefg.woff2
