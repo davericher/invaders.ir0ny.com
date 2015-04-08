@@ -18,7 +18,10 @@ Invaders.prototype = {
         'use strict';
         // Get a 1000 points of completeing the match
         Game.Score.Add(1000);
+        // Check for high scores
+        Game.Score.CheckForTop();
         // Trigger the win state
+        Game.Score.NextLevel();
         Game.callbacks.win();
     },
     step: function () {

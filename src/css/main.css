@@ -91,7 +91,7 @@ nav {
 }
 
 #tabContainer {
-    height: 210px;
+    height: 230px;
     width: 800px;
     margin: 60px auto auto;
 }
@@ -235,7 +235,7 @@ li {
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-    color: darkgray;
+    color: #a9a9a9;
 }
 
 .ui-state-active a,
@@ -247,5 +247,5 @@ li {
 .ui-state-hover a,
 .ui-state-hover a:link,
 .ui-state-hover a:visited {
-    color: lemonchiffon;
+    color: #fffacd;
 }

@@ -45,7 +45,7 @@ Player.prototype = {
 
         this.reloading -= 1;
 
-        if (Game.keys.fire && this.reloading <= 0 && this.board.missiles < this.SHOTS_ALLOWED) {
+        if (Game.keys.fire && this.reloading <= 0 && this.board.missiles < this.SHOTS_ALLOWED && !Game.paused) {
             this.board.addSprite('missile',
                 this.x + this.width / 2 - Game.Sprites.map.missile.width / 2,
                 this.y - this.height, {

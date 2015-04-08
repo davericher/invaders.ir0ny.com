@@ -14,7 +14,11 @@ module.exports = function (grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+                banner: '/*! <%= pkg.name %> <%= pkg.author %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+                sourceMap: true,
+                sourceMapName: 'dist/<%= pkg.name %>.min.map',
+                nameCache: '.tmp/grunt-uglify-cache.json',
+                mangle: true
             },
             dist: {
                 files: {
@@ -37,6 +41,17 @@ module.exports = function (grunt) {
         watch: {
             files: ['<%= jshint.files %>'],
             tasks: ['jshint']
+        },
+        cssmin: {
+            target: {
+                files: [{
+                    cwd: 'src/css',
+                    expand: true,
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'dist',
+                    ext: '.min.css'
+                }]
+            }
         }
     });
 
@@ -44,9 +59,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+
 
     grunt.registerTask('test', ['jshint']);
 
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin']);
 
 };
