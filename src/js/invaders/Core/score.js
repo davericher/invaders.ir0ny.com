@@ -1,81 +1,172 @@
-/*global Game,prompt,localStorage */
+/*global Game,prompt,localStorage,alert */
+
+var ScoreEntry = function () {
+    'use strict';
+    this.initials = 'AAA';
+    this.score = 0;
+};
 
 var Score = function () {
     'use strict';
-    this.score = 0;
-    this.initials = '';
+    // Local player information
+    this.local = new ScoreEntry();
 };
 
+//noinspection JSUnusedGlobalSymbols
 Score.prototype = {
-    initialize: function () {
+    Initialize: function () {
         'use strict';
         // Check local cache for scores and initials first
-        this.Initials = this.GetInitials();
-        this.Score = this.GetScore();
-    },
-    // Draw the Initials and Score
-    draw: function () {
-        'use strict';
-        Game.canvas.fillStyle = 'white';
-
-        // Draw the Score
-        Game.canvas.fillText(this.Score, 10, 20);
-
-        // Draw the Initials
-        var initialsSize = Game.canvas.measureText(this.Initials).width;
-        Game.canvas.fillText(this.Initials, Game.width - initialsSize - 10, 20);
+        this.Load();
     },
     // Add to the score
     Add: function (score) {
         'use strict';
-        this.Score += Math.round(score); // Round to nearest whole number
+        this.local.score += Math.round(score); // Round to nearest whole number
     },
-    // Get Initials from the user then cache them in local storage
+    // Get Initials from the user
     /**
      * @return {string}
      */
     GetInitials: function () {
         'use strict';
         var initials = '';
-        if (localStorage.getItem('initials') !== null && localStorage.getItem('initials') !== '') {
-            return localStorage.getItem('initials');
-        }
         while (initials === null || initials.length < 3) {
-            initials = prompt('Incas you get a high score we need your initials. Ex DJR');
+            initials = prompt('Please enter a Min of 3 letters');
             if (initials !== null) {
                 initials = initials.trim();
             }
         }
         initials = initials.substr(0, 3).toUpperCase();
-        localStorage.setItem('initials', initials);
         return initials;
     },
     ClearInitials: function () {
         'use strict';
-        localStorage.removeItem('initials');
-        this.Initials = '';
+        this.local.initials = '';
+        this.Save();
     },
     /**
-     * @return {number}
+     * Save the local state to the cache
      */
-    GetScore: function () {
+    Save: function () {
         'use strict';
-        return Math.round(parseInt(localStorage.getItem('score'), 0) || 0);
+        // Save the local data
+        localStorage.setItem('invLocal', JSON.stringify(this.local));
+        localStorage.setItem('invLevel', this.level);
     },
-    SaveScore: function () {
+    SaveTop: function () {
         'use strict';
-        localStorage.setItem('score', this.Score);
+        localStorage.setItem('invTop', JSON.stringify(this.top));
+    },
+    /**
+     * Try and load the local initial and score state
+     * From the cache, if not available initialize them
+     * This function is huge because of wanting to over sanitize everything...
+     */
+    Load: function () {
+        'use strict';
+        // Grab the local cache object
+        var obj = JSON.parse(localStorage.getItem('invLocal')),
+            top = JSON.parse(localStorage.getItem('invTop')),
+            lvl = localStorage.getItem('invLevel');
+        // Null check to make sure it exists
+        if (obj !== null) {
+            // Null check to make sure the score exists
+            if (obj.score !== null) {
+                this.local.score = Math.round(parseInt(obj.score, 0) || 0);
+            } else {
+                this.local.score = 0;
+            }
+            if (obj.initials !== null && obj.initials !== '') {
+                this.local.initials = obj.initials;
+            } else {
+                this.local.initials = this.GetInitials();
+            }
+            // Null check to make sure the initials exist
+        } else {
+            this.local.score = 0;
+            this.local.initials = this.GetInitials();
+        }
+        // Check and init the top scores
+        if (top !== null) {
+            this.top = top;
+        } else {
+            // Check to see if there is any top scores, if not, build em
+            this.top = [new ScoreEntry(), new ScoreEntry(), new ScoreEntry()];
+            this.SaveTop();
+        }
+        // Check the level object
+        if (lvl !== null) {
+            lvl = Math.round(parseInt(lvl, 0) || 1);
+            if (lvl === 0) {
+                lvl = 1;
+            }
+            this.level = lvl;
+        }
+        // Final sanitation on level object
+        if (isNaN(this.level)) {
+            this.level = 1;
+        }
+    },
+    Clear: function () {
+        'use strict';
+        localStorage.removeItem('invLocal');
+        localStorage.removeItem('invTop');
+        localStorage.removeItem('invLevel');
     },
     ClearScore: function () {
         'use strict';
-        localStorage.removeItem('score');
-        this.Score = 0;
+        this.local.score = 0;
+        this.Save();
     },
     NewPlayer: function () {
         'use strict';
         this.ClearInitials();
         this.ClearScore();
-        this.Initials = this.GetInitials();
-        this.Score = this.GetScore();
+        this.ClearLevel();
+        this.Load();
+    },
+    CheckForTop: function () {
+        'use strict';
+        var idx,
+            found = false;
+        for (idx = 0; idx < this.top.length && !found; idx += 1) {
+            if (this.local.score > this.top[idx].score) {
+                // Set the values
+                // check to see if the score above this score needs to be swapped out
+                if (idx < this.top.length - 1 && this.top[idx].score > this.top[idx + 1].score) {
+                    this.top[idx + 1].initials = this.top[idx].initials;
+                    this.top[idx + 1].score = this.top[idx].score;
+                }
+                this.top[idx].initials = this.local.initials;
+                this.top[idx].score = this.local.score;
+                // Stop the check
+                found = true;
+                // Save the scores
+                this.SaveTop();
+                // Should probably find a more elegant way of doing this
+                alert('New top 3 replacing position ' + (idx + 1));
+            }
+        }
+    },
+    IsTop: function () {
+        'use strict';
+        var idx;
+        for (idx = 0; idx < this.top.length; idx += 1) {
+            if (this.local.score > this.top[idx].score) {
+                //noinspection JSConstructorReturnsPrimitive
+                return true;
+            }
+        }
+    },
+    NextLevel: function () {
+        'use strict';
+        this.level += 1;
+        this.Save();
+    },
+    ClearLevel: function () {
+        'use strict';
+        this.level = 1;
+        this.Save();
     }
 };

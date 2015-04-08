@@ -1,30 +1,21 @@
-/*global Game,Invaders*/
+/*global Game,Invaders,getRandomInt*/
+
 var Board = function Board() {
     'use strict';
     // Hold objects removed from screen
     this.removed_objs = [];
-
     //Amount of current projectiles
     this.missiles = 0;
-
-    // Construct the level 
+    // Ship y negative offset
+    this.offset = 20;
+    // Construct the level
+    this.InitialInvaders = 8;
     this.loadBoard();
 };
 
 Board.prototype = {
     // there is no place like home
     board: this,
-    // Level Map Data: Grid and rows are extensible
-    // 0: No Invader
-    // 1: White Invader
-    // 2: Red Invader
-    level: [
-        [0, 2, 2, 2, 2, 2, 2, 2, 2, 0],
-        [0, 2, 2, 2, 2, 2, 2, 2, 2, 0],
-        [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-        [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-        [0, 1, 1, 1, 1, 1, 1, 1, 1, 0]
-    ],
     add: function (obj) {
         'use strict';
         obj.board = this;
@@ -115,14 +106,14 @@ Board.prototype = {
             columns,
             rows,
             invaders,
-            invader;
+            invader,
+            random;
 
         this.objects = [];
-
         // Draw The player
         this.player = this.addSprite('player', // Sprite
             Game.width / 2, // X
-            Game.height - Game.Sprites.map.player.height - 15); // Y Offset
+            Game.height - Game.Sprites.map.player.height - this.offset); // Y Offset
 
         // Draw the Invaders
         this.Space = {
@@ -133,17 +124,17 @@ Board.prototype = {
 
         invaders = this.add(new Invaders());
         // Load the level from the level object
-        for (y = 0, rows = this.level.length; y < rows; y += 1) {
-            for (x = 0, columns = this.level[y].length; x < columns; x += 1) {
-                invader = Game.Sprites.map['invader' + this.level[y][x]];
-                if (invader) {
-                    this.addSprite('invader' + this.level[y][x], // Which Sprite
-                        (invader.width + this.Space.BetweenInvaders) * x, // X
-                        (invader.height * y) + (this.Space.BetweenRows * y), // Yw
-                        {
-                            group: invaders
-                        }); // Options
-                }
+        for (y = 0, rows = Game.Score.level; y < rows; y += 1) {
+            for (x = 0, columns = this.InitialInvaders; x < columns; x += 1) {
+                // Offset the grid using a 0 1 2 system in the levelSeed
+                random = ((y + 1) % 2) ? 2 : 1;
+                invader = Game.Sprites.map['invader' + random];
+                this.addSprite('invader' + random, // Which Sprite
+                    (invader.width + this.Space.BetweenInvaders) * x, // X
+                    (invader.height * y) + (this.Space.BetweenRows * y), // Yw
+                    {
+                        group: invaders
+                    }); // Options
             }
         }
     }

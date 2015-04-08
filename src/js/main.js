@@ -8,7 +8,7 @@
 /*jslint browser: true, forin:true */
 /*global $, jQuery, InvadersFromSpace, Data, App*/
 
-// Domain specific code
+/** Site Specific code **/
 var Site = {
     // Variables
     GetScoreService: "http://playdoh.algonquincollege.com/lts/mike/WebServices/MessageService.asmx/GetScores", // Provided
@@ -94,9 +94,17 @@ $(function () {
         if (Game.KeyBindings[event.keyCode]) {
             Game.keys[Game.KeyBindings[event.keyCode]] = true;
         }
+        // Hack to take pause out of the main loop
+        if (event.keyCode === Game.GetBindingByValue('pause')) {
+            Game.Pause();
+        }
     }).keyup(function (event) { // Handle the Key Up event
         if (Game.KeyBindings[event.keyCode]) {
             Game.keys[Game.KeyBindings[event.keyCode]] = false;
+        }
+    }).blur(function () {
+        if (!Game.paused) {
+            Game.Pause();
         }
     });
 });

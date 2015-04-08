@@ -25,6 +25,7 @@ var Data = {
             var screen = new Screen("Game Over",
                 function () {
                     Game.Score.ClearScore(); // Reset the Score
+                    Game.Score.ClearLevel(); // Reset the level
                     Game.LoadBoard(new Board());
                 });
             Game.LoadBoard(screen);
@@ -33,7 +34,7 @@ var Data = {
             'use strict';
             var screen = new Screen("You have saved the Universe",
                 function () {
-                    Game.Score.SaveScore(); // Save the score
+                    Game.Score.Save(); // Save the score
                     Game.LoadBoard(new Board());
                 });
             Game.LoadBoard(screen);
@@ -76,7 +77,16 @@ var Data = {
             sy: 60,
             width: 2,
             height: 20,
-            Type: Missile
+            Type: Missile,
+            frames: 30
+        },
+        'missile2': {
+            sx: 0,
+            sy: 80,
+            width: 2,
+            height: 20,
+            Type: Missile,
+            frames: 30
         }
     }
 };
