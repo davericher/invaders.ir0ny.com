@@ -31,15 +31,15 @@ Invader.prototype = {
         var score = 100 / this.board.missiles, // 100 points divides by the amount of missles on the screen
             tmpScore;
         switch (this.name) {
-            case 'invader1': // The blue guys
-                tmpScore = 50;
-                break;
-            case 'invader2':    // The pink guys
-                tmpScore = 100;
-                break;
-            default:    // This should not happen but ahh well
-                tmpScore = 25;
-                break;
+        case 'invader1': // The blue guys
+            tmpScore = 50;
+            break;
+        case 'invader2':    // The pink guys
+            tmpScore = 100;
+            break;
+        default:    // This should not happen but ahh well
+            tmpScore = 25;
+            break;
         }
         if (!isNaN(tmpScore)) {
             score += tmpScore;

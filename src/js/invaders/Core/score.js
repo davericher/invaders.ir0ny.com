@@ -189,15 +189,15 @@ Score.prototype = {
             placing = '';
         if (top) {
             switch (top) {
-                case 1:
-                    placing = '1st';
-                    break;
-                case 2:
-                    placing = '2nd';
-                    break;
-                case 3:
-                    placing = '3rd';
-                    break;
+            case 1:
+                placing = '1st';
+                break;
+            case 2:
+                placing = '2nd';
+                break;
+            case 3:
+                placing = '3rd';
+                break;
             }
         }
         return placing;
