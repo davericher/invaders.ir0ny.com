@@ -82,7 +82,7 @@ Board.prototype = {
     render: function (canvas) {
         'use strict';
         // Fill rect vs clear rect because if the user saves an image of the canvas
-        // I want them to see the black backkground
+        // I want them to see the black background
         canvas.fillStyle = "#000000";
         canvas.fillRect(0, 0, Game.width, Game.height);
         // Iterate through all the board objects
