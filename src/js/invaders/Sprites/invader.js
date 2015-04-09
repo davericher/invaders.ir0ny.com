@@ -56,7 +56,7 @@ Invader.prototype = {
         'use strict';
         // Set the speed of the invaders every time one die
         // formula
-        this.mx += dt * ((this.group.dx / 2) * (Game.Score.level / 2));
+        this.mx += dt * ((this.group.dx / 3) * (Game.Score.level / 3));
         this.y += this.group.dy;
         if (Math.abs(this.mx) > 10) { // Step the row
 
@@ -88,7 +88,7 @@ Invader.prototype = {
     // Occasionaly an invader will fire
     fireSometimes: function () {
         'use strict';
-        if (Math.random() * 100 < (Game.Score.level > 5 ? 2 + this.CHANCE_TO_FIRE : this.CHANCE_TO_FIRE)) {
+        if (Math.random() * 100 < (Game.Score.level > 5 ? 1 + this.CHANCE_TO_FIRE : this.CHANCE_TO_FIRE)) {
             this.board.addSprite((this.name === 'invader2') ? 'missile2' : 'missile', this.x + this.width / 2 - Game.Sprites.map.missile2.width / 2,
                 this.y + this.height, {
                     dy: 100, // Sasdet the direction

@@ -137,7 +137,7 @@ Board.prototype = {
 
         invaders = this.add(new Invaders());
         // Load the level from the level object
-        for (y = 0, rows = Game.Score.level; y < rows; y += 1) {
+        for (y = 0, rows = Math.min(Game.Score.level, 5); y < rows; y += 1) {
             for (x = 0, columns = this.InitialInvaders; x < columns; x += 1) {
                 // Offset the grid using a 0 1 2 system in the levelSeed
                 random = ((y + 1) % 2) ? 2 : 1;

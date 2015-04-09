@@ -55,7 +55,7 @@ Score.prototype = {
         'use strict';
         // Save the local data
         localStorage.setItem('invLocal', JSON.stringify(this.local));
-        localStorage.setItem('invLevel', this.level);
+        localStorage.setItem('invLevel', JSON.stringify(this.level));
     },
     SaveTop: function () {
         'use strict';
@@ -71,7 +71,7 @@ Score.prototype = {
         // Grab the local cache object
         var obj = JSON.parse(localStorage.getItem('invLocal')),
             top = JSON.parse(localStorage.getItem('invTop')),
-            lvl = localStorage.getItem('invLevel');
+            lvl = JSON.parse(localStorage.getItem('invLevel'));
         // Null check to make sure it exists
         if (obj !== null) {
             // Null check to make sure the score exists
@@ -205,11 +205,11 @@ Score.prototype = {
     NextLevel: function () {
         'use strict';
         this.level += 1;
-        this.Save();
+        //this.Save();
     },
     ClearLevel: function () {
         'use strict';
         this.level = 1;
-        this.Save();
+        //this.Save();
     }
 };
