@@ -8,14 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1da0583-bb89-4067-9258-b985ff963c3c" name="Default" comment="Bug Fixes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Design/customSprites.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Design/kl-09-si.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/sprites - Copy (2).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/sprites - Copy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Design/title.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Final_Assignment_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/site.manifest" afterPath="$PROJECT_DIR$/src/site.manifest" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Final Assignment.iws" />
@@ -79,16 +72,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="invaders.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/invaders/Sprites/invaders.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="invader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/invaders/Sprites/invader.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -109,10 +92,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customSprites.psd" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customSprites.psd" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Design/customSprites.psd">
           <provider selected="true" editor-type-id="images">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="site.manifest" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/site.manifest">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.11724138">
+              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -200,13 +193,13 @@
         <option value="$PROJECT_DIR$/src/js/main.js" />
         <option value="$PROJECT_DIR$/src/tmp.site.manifest" />
         <option value="$PROJECT_DIR$/src/js/invaders/Core/board.js" />
-        <option value="$PROJECT_DIR$/src/site.manifest" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/css/main.css" />
         <option value="$PROJECT_DIR$/src/js/invaders/Sprites/invaders.js" />
         <option value="$PROJECT_DIR$/src/js/invaders/Core/app.js" />
         <option value="$PROJECT_DIR$/src/js/invaders/Core/score.js" />
         <option value="$PROJECT_DIR$/src/js/invaders/Sprites/invader.js" />
+        <option value="$PROJECT_DIR$/src/site.manifest" />
       </list>
     </option>
   </component>
@@ -550,7 +543,13 @@
       <option name="project" value="LOCAL" />
       <updated>1428543435760</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Bug Fixes">
+      <created>1428543518322</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1428543518322</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -574,7 +573,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3490364" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30588236" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32995737" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14232409" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13272922" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -907,13 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/site.manifest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="97" selection-start-line="38" selection-start-column="97" selection-end-line="38" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1012,6 +1004,14 @@
     <entry file="file://$PROJECT_DIR$/Design/customSprites.psd">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/site.manifest">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11724138">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

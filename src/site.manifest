@@ -2,6 +2,7 @@ CACHE MANIFEST
 # David Richer - Web Imaging and Animations Final - 2015
 # Dave@Ir0nY.com
 # BETA VERSION
+# Expect this cache to break 
 CACHE:
 index.html
 css/main.css
